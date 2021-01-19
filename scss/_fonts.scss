@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Whitney-L";
+  src: url("../fonts/Whitney-Light.eot");
+  src: local("Whitney Light Regular"), local("Whitney-Light"),
+    url("../fonts/Whitney-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Whitney-Light.woff") format("woff"),
+    url("../fonts/Whitney-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Whitney-S";
+  src: url("../fonts/Whitney-Light.eot");
+  src: local("Whitney Semibold Regular"), local("Whitney-Semibold"),
+    url("../fonts/Whitney-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Whitney-Semibold.woff") format("woff"),
+    url("../fonts/Whitney-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
