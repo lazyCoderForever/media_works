@@ -9,6 +9,16 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Whitney-M";
+  src: url("../fonts/Whitney-Medium.eot");
+  src: local("Whitney Medium Regular"), local("Whitney-Medium"),
+    url("../fonts/Whitney-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Whitney-Medium.woff") format("woff"),
+    url("../fonts/Whitney-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
   font-family: "Whitney-S";
   src: url("../fonts/Whitney-Light.eot");
   src: local("Whitney Semibold Regular"), local("Whitney-Semibold"),

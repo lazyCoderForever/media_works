@@ -1,5 +1,93 @@
+@import "_reset.scss";
+@import "~bootstrap/dist/css/bootstrap.min.css";
 @import "_fonts.scss";
 
+$colHover: #474351;
+$bgHover: #f8f8fa;
+$grey: #918d9a;
+$h1: #2e2d35;
+$white: #ffffff;
+$postlink: #f25b24;
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  padding: 0;
+}
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: $h1;
+  border: 1px solid $postlink;
+  background-color: transparent;
+  box-shadow: 5px 5px 3px -1px #4c4c4c;
+}
 html,
 body {
   padding: 0;
@@ -9,9 +97,200 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font-family: "Whitney-L";
+}
+
+li {
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Whitney-L";
+  font-family: "Whitney-M";
 }
+.icon-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 14px 7px 0;
+  transition: 0.2s;
+  border-color: transparent $colHover transparent transparent;
+}
+.icon-triangle__active {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 14px 7px 0;
+  border-color: transparent $colHover transparent transparent;
+  transition: 0.2s;
+  transform: rotate(-90deg);
+}
+.h1-title {
+  font-size: 30px;
+  line-height: 39px;
+  font-family: "Whitney-S";
+  color: $h1;
+}
+
+.sideBar-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  &_item {
+    &_link {
+      display: block;
+      width: 100%;
+      padding: 22px 0 22px 72px;
+      font-size: 16px;
+      line-height: 21px;
+      color: $grey;
+      transition: 0.2s;
+      background-color: $white;
+      font-family: "Whitney-M";
+      cursor: pointer;
+      &:hover {
+        color: $colHover;
+        background-color: $bgHover;
+      }
+      &_active {
+        color: $colHover;
+        background-color: $bgHover;
+      }
+    }
+  }
+}
+
+.posts {
+  max-height: 100vh;
+  padding: 0 95px;
+  background-color: $bgHover;
+  overflow: hidden;
+  overflow-y: scroll;
+  &::scrollbar-button {
+    background-color: red;
+  }
+  &_h1-title {
+    margin: 60px auto 0;
+  }
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  max-width: 570px;
+
+  margin: 30px 0;
+  padding: 23px 30px 32px;
+  background-color: $white;
+  box-sizing: border-box;
+
+  box-shadow: 0px 4px 10px rgba(64, 40, 154, 0.05);
+  border-radius: 4px;
+  font-family: "Whitney-L";
+
+  &_user-name {
+    font-weight: 350;
+    font-size: 20px;
+    line-height: 26px;
+    font-family: "Whitney-M";
+    color: $colHover;
+  }
+  &_user-city {
+    font-weight: 325;
+    font-size: 14px;
+    line-height: 18px;
+    color: $grey;
+  }
+  &_user-link {
+    margin-top: 19px;
+    font-weight: 325;
+    font-size: 16px;
+    line-height: 21px;
+    color: $postlink;
+    font-family: "Whitney-M";
+  }
+}
+/* --------------------- Detail info  ---------------------*/
+.user-detail-info {
+  display: flex;
+  flex-direction: column;
+}
+.user-data-preview {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 27px;
+  background-color: $white;
+  border-bottom: 1px solid #eceaf2;
+  &_name {
+    font-family: "Whitney-S";
+    font-size: 18px;
+    line-height: 24px;
+    color: $h1;
+  }
+  &_email {
+    font-family: "Whitney-L";
+    font-size: 13px;
+    line-height: 17px;
+    color: $grey;
+  }
+}
+.user-data-full {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 27px;
+  font-family: "Whitney-L";
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    font-family: "Whitney-M";
+    font-size: 20px;
+    line-height: 24px;
+    color: $colHover;
+    background: $bgHover;
+    border: 1px solid transparent;
+    box-shadow: 5px 5px 9px -1px #4c4c4c;
+    transition: 0.3s;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $h1;
+      border: 1px solid $postlink;
+      background-color: transparent;
+      box-shadow: 5px 5px 3px -1px #4c4c4c;
+    }
+  }
+  &_item {
+    width: 100%;
+    margin: 20px auto;
+    &_title {
+      font-family: "Whitney-M";
+      font-size: 18px;
+      line-height: 24px;
+      color: $colHover;
+    }
+
+    &_address {
+      display: flex;
+      flex-direction: column;
+      &_item {
+        &_name {
+          font-family: "Whitney-M";
+          font-size: 18px;
+          line-height: 24px;
+          color: $colHover;
+        }
+        &_value {
+          font-family: "Whitney-L";
+          font-size: 16px;
+          line-height: 24px;
+          color: $grey;
+        }
+      }
+    }
+  }
+}
+/* ---------------------  ---------------------*/
